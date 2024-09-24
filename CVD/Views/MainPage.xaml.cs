@@ -4,19 +4,38 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.IO;
+using Notification.Wpf;
+using Notification.Wpf.Classes;
+using System.Windows.Media;
+using YoutubeDLSharp;
 
 namespace CVD.Views;
 
 public partial class MainPage : Page, INotifyPropertyChanged
 {
+    private bool isNotDownloading = true;
+    private IProgress<DownloadProgress> progress;
+    private IProgress<string> output;
+
     public MainPage()
     {
         InitializeComponent();
         DataContext = this;
-        Application.Current.MainWindow.WindowState = WindowState.Maximized;
+        //Application.Current.MainWindow.WindowState = WindowState.Maximized;
         Loaded += MainPage_Loaded;
-        
+        progress = new Progress<DownloadProgress>((p) => showProgress(p));
 
+    }
+
+
+
+    public YoutubeDL YoutubeDL { get; }
+
+    
+
+    private void showProgress(DownloadProgress p)
+    {
+        progressBar1.Value = p.Progress;
     }
 
     private async void MainPage_Loaded(object sender, RoutedEventArgs e)
@@ -105,8 +124,47 @@ public partial class MainPage : Page, INotifyPropertyChanged
         }
     }
 
+    public async Task DownloadVideos() 
+    {
+        var _notificationManager = new NotificationManager();
+        var ytdl = new YoutubeDL();
+        foreach (var listBoxItem in listBox1.Items)
+        {
+
+            _notificationManager.Show("Start", listBoxItem.ToString() + " download started!", NotificationType.Information, "WindowArea");
+            var progress = new Progress<DownloadProgress>(p => progressBar1.Value = p.Progress);
+            // a cancellation token source used for cancelling the download
+            // use `cts.Cancel();` to perform cancellation
+            var cts = new CancellationTokenSource();
+            RunResult<string> result;
+            isNotDownloading = false;
+            result = await ytdl.RunVideoDownload(listBoxItem.ToString(),
+                            progress: progress, ct: cts.Token);
+            if (result.Success)
+            {
+                _notificationManager.Show("Success", listBoxItem.ToString() + " was downloaded!", NotificationType.Success, "WindowArea");
+            }
+            else
+            {
+                _notificationManager.Show("Error", listBoxItem.ToString() + " wasn't downloaded!", NotificationType.Error, "WindowArea");
+            }
+            isNotDownloading = true;
+        }
+    }
+
     private void buttonClearList_Click(object sender, RoutedEventArgs e)
     {
         listBox1.Items.Clear();
+    }
+
+    private async void buttonDownload_Click(object sender, RoutedEventArgs e)
+    {
+        await DownloadVideos();
+    }
+
+    private void buttonCancel_Click(object sender, RoutedEventArgs e)
+    {
+        var cts = new CancellationTokenSource();
+        cts.Cancel();
     }
 }

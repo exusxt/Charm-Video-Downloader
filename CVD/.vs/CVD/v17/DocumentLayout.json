@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\exus\\Documents\\GitHub\\Charm-Video-Downloader\\CVD\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8D2903F3-F1D7-44FC-A327-2E6F1126F8B0}|CVD.csproj|c:\\users\\exus\\documents\\github\\charm-video-downloader\\cvd\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8D2903F3-F1D7-44FC-A327-2E6F1126F8B0}|CVD.csproj|solutionrelative:views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D2903F3-F1D7-44FC-A327-2E6F1126F8B0}|CVD.csproj|c:\\users\\exus\\documents\\github\\charm-video-downloader\\cvd\\views\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8D2903F3-F1D7-44FC-A327-2E6F1126F8B0}|CVD.csproj|solutionrelative:views\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8D2903F3-F1D7-44FC-A327-2E6F1126F8B0}|CVD.csproj|c:\\users\\exus\\documents\\github\\charm-video-downloader\\cvd\\views\\shellwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{8D2903F3-F1D7-44FC-A327-2E6F1126F8B0}|CVD.csproj|solutionrelative:views\\shellwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -17,14 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8D2903F3-F1D7-44FC-A327-2E6F1126F8B0}|CVD.csproj|c:\\users\\exus\\documents\\github\\charm-video-downloader\\cvd\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8D2903F3-F1D7-44FC-A327-2E6F1126F8B0}|CVD.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D2903F3-F1D7-44FC-A327-2E6F1126F8B0}|CVD.csproj|c:\\users\\exus\\documents\\github\\charm-video-downloader\\cvd\\views\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8D2903F3-F1D7-44FC-A327-2E6F1126F8B0}|CVD.csproj|solutionrelative:views\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D2903F3-F1D7-44FC-A327-2E6F1126F8B0}|CVD.csproj|c:\\users\\exus\\documents\\github\\charm-video-downloader\\cvd\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8D2903F3-F1D7-44FC-A327-2E6F1126F8B0}|CVD.csproj|solutionrelative:views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8D2903F3-F1D7-44FC-A327-2E6F1126F8B0}|CVD.csproj|c:\\users\\exus\\documents\\github\\charm-video-downloader\\cvd\\views\\shellwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ShellWindow.xaml",
               "DocumentMoniker": "C:\\Users\\exus\\Documents\\GitHub\\Charm-Video-Downloader\\CVD\\Views\\ShellWindow.xaml",
               "RelativeDocumentMoniker": "Views\\ShellWindow.xaml",
@@ -58,20 +58,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\exus\\Documents\\GitHub\\Charm-Video-Downloader\\CVD\\Views\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "Views\\MainPage.xaml.cs",
               "ToolTip": "C:\\Users\\exus\\Documents\\GitHub\\Charm-Video-Downloader\\CVD\\Views\\MainPage.xaml.cs",
               "RelativeToolTip": "Views\\MainPage.xaml.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAArwFUAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-21T01:00:27.196Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\exus\\Documents\\GitHub\\Charm-Video-Downloader\\CVD\\App.xaml.cs",
               "RelativeDocumentMoniker": "App.xaml.cs",
@@ -79,12 +79,11 @@
               "RelativeToolTip": "App.xaml.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T00:08:19.631Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-21T00:08:19.631Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\exus\\Documents\\GitHub\\Charm-Video-Downloader\\CVD\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
@@ -96,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "SettingsPage.xaml",
               "DocumentMoniker": "C:\\Users\\exus\\Documents\\GitHub\\Charm-Video-Downloader\\CVD\\Views\\SettingsPage.xaml",
               "RelativeDocumentMoniker": "Views\\SettingsPage.xaml",
@@ -108,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\exus\\Documents\\GitHub\\Charm-Video-Downloader\\CVD\\Views\\MainPage.xaml",
               "RelativeDocumentMoniker": "Views\\MainPage.xaml",
@@ -128,8 +127,7 @@
               "RelativeToolTip": "Views\\ShellWindow.xaml.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAADUAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T00:31:49.388Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-21T00:31:49.388Z"
             },
             {
               "$type": "Document",
@@ -141,8 +139,7 @@
               "RelativeToolTip": "README.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-09-20T23:06:19.642Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-20T23:06:19.642Z"
             }
           ]
         }
