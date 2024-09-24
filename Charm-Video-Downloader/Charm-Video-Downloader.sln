@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charm-Video-Downloader", "Charm-Video-Downloader.csproj", "{39ED380B-6538-4F34-8ADC-38A74952F77B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39ED380B-6538-4F34-8ADC-38A74952F77B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39ED380B-6538-4F34-8ADC-38A74952F77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39ED380B-6538-4F34-8ADC-38A74952F77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39ED380B-6538-4F34-8ADC-38A74952F77B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2CAAECF-05B3-4E11-9C8E-F23C57DE6C81}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "c4XBY14kR3c=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\exus\\Documents\\GitHub\\Charm-Video-Downloader\\Charm-Video-Downloader\\Charm-Video-Downloader.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\exus\\.nuget\\packages\\autoupdater.net.official\\1.9.2\\autoupdater.net.official.1.9.2.nupkg.sha512",
+    "C:\\Users\\exus\\.nuget\\packages\\microsoft.web.webview2\\1.0.2592.51\\microsoft.web.webview2.1.0.2592.51.nupkg.sha512",
+    "C:\\Users\\exus\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\exus\\.nuget\\packages\\realtaiizor\\3.8.0.7\\realtaiizor.3.8.0.7.nupkg.sha512",
+    "C:\\Users\\exus\\.nuget\\packages\\toastr.winforms\\6.1.0\\toastr.winforms.6.1.0.nupkg.sha512",
+    "C:\\Users\\exus\\.nuget\\packages\\youtubedlsharp\\1.1.1\\youtubedlsharp.1.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
