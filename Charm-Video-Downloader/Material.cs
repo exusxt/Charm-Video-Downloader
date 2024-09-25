@@ -22,9 +22,7 @@ namespace form_summon
         {
             if (!File.Exists("ffmpeg.exe") && !File.Exists("yt-dlp.exe"))
             {
-                string batchOperationResults;
-                batchOperationResults = "Would you like me to download ffmpeg and yt-dlp?";
-                DialogResult mresult = MaterialMessageBox.Show(batchOperationResults, "Missing Files", MessageBoxButtons.YesNo, MaterialFlexibleForm.ButtonsPosition.Center);
+                DialogResult mresult = MaterialMessageBox.Show("Would you like me to download ffmpeg and yt-dlp?", "Missing Files", MessageBoxButtons.YesNo, MaterialFlexibleForm.ButtonsPosition.Center);
                 if (mresult == DialogResult.Yes)
                 {
                     await YoutubeDLSharp.Utils.DownloadYtDlp();

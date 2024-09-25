@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Charm-Video-Downloader")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36a2054a7949535509db0cd81760ac4e7662b32c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+348f5d5a16b14d639b0f5fe5a0f6f268806cf3f2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Charm-Video-Downloader")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Charm-Video-Downloader")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
