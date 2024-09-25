@@ -22,14 +22,16 @@ namespace form_summon
         {
             if (!File.Exists("ffmpeg.exe") && !File.Exists("yt-dlp.exe"))
             {
-                var Result = System.Windows.MessageBox.Show("Would you like me to download ffmpeg and yt-dlp?", "Missing Files", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (Result == MessageBoxResult.Yes)
+                string batchOperationResults;
+                batchOperationResults = "Would you like me to download ffmpeg and yt-dlp?";
+                DialogResult mresult = MaterialMessageBox.Show(batchOperationResults, "Missing Files", MessageBoxButtons.YesNo, MaterialFlexibleForm.ButtonsPosition.Center);
+                if (mresult == DialogResult.Yes)
                 {
                     await YoutubeDLSharp.Utils.DownloadYtDlp();
                     await YoutubeDLSharp.Utils.DownloadFFmpeg();
                     MaterialMessageBox.Show(this, "The Files were downloaded!", "Ready to use", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else if (Result == MessageBoxResult.No)
+                else if (mresult == DialogResult.No)
                 {
                     MaterialMessageBox.Show(this, "Without ffmpeg and yt-dlp, this program don't work!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -119,15 +121,15 @@ namespace form_summon
                 if (result.Success)
                 {
                     //_notificationManager.Show("Success", listBoxItem.ToString() + " was downloaded!", NotificationType.Success, "WindowArea");
-                    //var toast = new Toast(ToastrPosition.TopRight, duration: 3000, enableSoundEffect: true);
-                    //toast.ShowSuccess(listBoxItem.ToString() + " was downloaded!");
+                    var toast = new Toast(ToastrPosition.TopRight, duration: 3000, enableSoundEffect: true);
+                    toast.ShowSuccess(listBoxItem.ToString() + " was downloaded!");
                     
                 }
                 else
                 {
                     //_notificationManager.Show("Error", listBoxItem.ToString() + " wasn't downloaded!", NotificationType.Error, "WindowArea");
-                    //var toast = new Toast(ToastrPosition.TopRight, duration: 3000, enableSoundEffect: true);
-                    //toast.ShowError(listBoxItem.ToString() + " wasn't downloaded!");
+                    var toast = new Toast(ToastrPosition.TopRight, duration: 3000, enableSoundEffect: true);
+                    toast.ShowError(listBoxItem.ToString() + " wasn't downloaded!");
                 }
                 //isNotDownloading = true;
                 

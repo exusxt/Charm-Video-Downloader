@@ -63,6 +63,16 @@ namespace Charm_Video_Downloader.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CVD_logo {
+            get {
+                object obj = ResourceManager.GetObject("CVD_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap round_add_black_24dp {
             get {
                 object obj = ResourceManager.GetObject("round_add_black_24dp", resourceCulture);

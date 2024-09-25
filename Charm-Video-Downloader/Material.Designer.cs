@@ -34,6 +34,7 @@ namespace form_summon
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Material));
             materialTabControl1 = new ReaLTaiizor.Controls.MaterialTabControl();
             tabPage1 = new TabPage();
+            MainProgressbar = new ReaLTaiizor.Controls.MaterialProgressBar();
             ClearListButton = new ReaLTaiizor.Controls.MaterialButton();
             RemoveItemButton = new ReaLTaiizor.Controls.MaterialButton();
             DownloadListBox = new ListBox();
@@ -42,10 +43,11 @@ namespace form_summon
             StartDownloadButton = new ReaLTaiizor.Controls.MaterialButton();
             tabPage2 = new TabPage();
             imageList1 = new ImageList(components);
-            MainProgressbar = new ReaLTaiizor.Controls.MaterialProgressBar();
+            pictureBox1 = new PictureBox();
             AddUrlButton = new ReaLTaiizor.Controls.MaterialButton();
             materialTabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // AddUrlButton
@@ -103,6 +105,16 @@ namespace form_summon
             tabPage1.Text = "MainPage";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // MainProgressbar
+            // 
+            MainProgressbar.Depth = 0;
+            MainProgressbar.Location = new Point(6, 476);
+            MainProgressbar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            MainProgressbar.Name = "MainProgressbar";
+            MainProgressbar.Size = new Size(739, 36);
+            MainProgressbar.TabIndex = 12;
+            MainProgressbar.UseAccentColor = false;
+            // 
             // ClearListButton
             // 
             ClearListButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -147,9 +159,9 @@ namespace form_summon
             // 
             // DownloadListBox
             // 
-            DownloadListBox.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Pixel);
+            DownloadListBox.Font = new Font("Segoe UI", 9F);
             DownloadListBox.FormattingEnabled = true;
-            DownloadListBox.ItemHeight = 12;
+            DownloadListBox.ItemHeight = 15;
             DownloadListBox.Location = new Point(6, 60);
             DownloadListBox.Name = "DownloadListBox";
             DownloadListBox.Size = new Size(983, 364);
@@ -166,7 +178,7 @@ namespace form_summon
             LinkAdderBox.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Pixel);
             LinkAdderBox.HideSelection = true;
             LinkAdderBox.LeadingIcon = null;
-            LinkAdderBox.Location = new Point(6, 3);
+            LinkAdderBox.Location = new Point(6, 9);
             LinkAdderBox.MaxLength = 32767;
             LinkAdderBox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             LinkAdderBox.Name = "LinkAdderBox";
@@ -178,12 +190,13 @@ namespace form_summon
             LinkAdderBox.SelectionLength = 0;
             LinkAdderBox.SelectionStart = 0;
             LinkAdderBox.ShortcutsEnabled = true;
-            LinkAdderBox.Size = new Size(904, 48);
+            LinkAdderBox.Size = new Size(904, 36);
             LinkAdderBox.TabIndex = 6;
             LinkAdderBox.TabStop = false;
             LinkAdderBox.TextAlign = HorizontalAlignment.Left;
             LinkAdderBox.TrailingIcon = null;
             LinkAdderBox.UseSystemPasswordChar = false;
+            LinkAdderBox.UseTallSize = false;
             // 
             // CancelButton
             // 
@@ -246,33 +259,38 @@ namespace form_summon
             imageList1.Images.SetKeyName(0, "settings_24dp_5F6368.png");
             imageList1.Images.SetKeyName(1, "home_24dp_5F6368.png");
             // 
-            // MainProgressbar
+            // pictureBox1
             // 
-            MainProgressbar.Depth = 0;
-            MainProgressbar.Location = new Point(6, 476);
-            MainProgressbar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            MainProgressbar.Name = "MainProgressbar";
-            MainProgressbar.Size = new Size(739, 36);
-            MainProgressbar.TabIndex = 12;
-            MainProgressbar.UseAccentColor = false;
+            pictureBox1.BackColor = SystemColors.Control;
+            pictureBox1.Image = Charm_Video_Downloader.Properties.Resources.CVD_logo;
+            pictureBox1.Location = new Point(302, 27);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(32, 32);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // Material
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1091, 625);
+            Controls.Add(pictureBox1);
             Controls.Add(materialTabControl1);
+            DrawerAutoShow = true;
             DrawerShowIconsWhenHidden = true;
             DrawerTabControl = materialTabControl1;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
             Name = "Material";
             Padding = new Padding(4, 74, 4, 3);
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Material";
+            Text = "Charm Video Downloader";
             Load += Material_Load;
             materialTabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -290,5 +308,6 @@ namespace form_summon
         private ReaLTaiizor.Controls.MaterialButton RemoveItemButton;
         private ReaLTaiizor.Controls.MaterialButton ClearListButton;
         private ReaLTaiizor.Controls.MaterialProgressBar MainProgressbar;
+        private PictureBox pictureBox1;
     }
 }
