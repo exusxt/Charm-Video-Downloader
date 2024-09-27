@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using Toastr.Winforms;
 using YoutubeDLSharp;
+using YoutubeDLSharp.Options;
 
 
 namespace form_summon
@@ -14,10 +15,14 @@ namespace form_summon
         {
             InitializeComponent();
             DownloadListBox.Items.Clear();
+            progress = new Progress<DownloadProgress>((p) => showProgress(p));
         }
 
         public YoutubeDL YoutubeDL { get; }
-        
+        private IProgress<DownloadProgress> progress;
+        private IProgress<string> output;
+        string DownloadFolder = @"downloads";
+        bool isNotDownloading = true;
         private async Task CheckReqs()
         {
             if (!File.Exists("ffmpeg.exe") && !File.Exists("yt-dlp.exe"))
@@ -67,7 +72,11 @@ namespace form_summon
             await CheckReqs();
         }
 
-
+        private void showProgress(DownloadProgress p)
+        {
+            MainProgressbar.Value = (int)(p.Progress * 100);
+            labelDownloadSpeed.Text = $"Downloadspeed: {p.DownloadSpeed} | left: {p.ETA}";
+        }
 
         bool IsValidURL(string URL)
         {
@@ -79,8 +88,8 @@ namespace form_summon
         private void AddUrlButton_Click(object sender, EventArgs e)
         {
             var toast = new Toast(ToastrPosition.BottomRight, duration: 3000, enableSoundEffect: true);
-            if (IsValidURL(LinkAdderBox.Text)) 
-            { 
+            if (IsValidURL(LinkAdderBox.Text))
+            {
                 _snackbar(LinkAdderBox.Text + " added!");
                 DownloadListBox.Items.Add(LinkAdderBox.Text);
                 LinkAdderBox.Clear();
@@ -101,37 +110,46 @@ namespace form_summon
         private CancellationTokenSource cts = new CancellationTokenSource();
         public async Task DownloadVideos()
         {
-            
+            cts.Dispose(); // Clean up old token source....
+            cts = new CancellationTokenSource(); // "Reset" the cancellation token source...
             var ytdl = new YoutubeDL();
+            ytdl.OutputFolder = DownloadFolder;
+            var options = new OptionSet()
+            {
+                ForceOverwrites = true,
+                RestrictFilenames = true,
+                //Format = "best",
+                RemuxVideo = "mp4"
+            };
+            isNotDownloading = false;
             foreach (var listBoxItem in DownloadListBox.Items)
             {
                 _snackbar(listBoxItem.ToString() + " download started!");
-                //_notificationManager.Show("Start", listBoxItem.ToString() + " download started!", NotificationType.Information, "WindowArea");
                 
+
                 // a cancellation token source used for cancelling the download
                 // use `cts.Cancel();` to perform cancellation
-                
+
                 RunResult<string> result;
-                //isNotDownloading = false;
-                var progress = new Progress<DownloadProgress>(p => MainProgressbar.Value = (int)(p.Progress*100));
+                
+                
                 result = await ytdl.RunVideoDownload(listBoxItem.ToString(),
-                                progress: progress, ct: cts.Token);
+                                progress: progress, ct: cts.Token, overrideOptions: options);
                 if (result.Success)
                 {
-                    //_notificationManager.Show("Success", listBoxItem.ToString() + " was downloaded!", NotificationType.Success, "WindowArea");
                     var toast = new Toast(ToastrPosition.TopRight, duration: 3000, enableSoundEffect: true);
-                    toast.ShowSuccess(listBoxItem.ToString() + " was downloaded!");
-                    
+                    toast.ShowSuccess(listBoxItem.ToString() + " download finished!");
+
                 }
                 else
                 {
-                    //_notificationManager.Show("Error", listBoxItem.ToString() + " wasn't downloaded!", NotificationType.Error, "WindowArea");
                     var toast = new Toast(ToastrPosition.TopRight, duration: 3000, enableSoundEffect: true);
-                    toast.ShowError(listBoxItem.ToString() + " wasn't downloaded!");
+                    toast.ShowError(listBoxItem.ToString() + " download failed!");
                 }
-                //isNotDownloading = true;
                 
+
             }
+            isNotDownloading = true;
             DownloadListBox.Items.Clear();
             MaterialMessageBox.Show(this, "All Downloads Completed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -139,19 +157,30 @@ namespace form_summon
         private async void StartDownloadButton_Click(object sender, EventArgs e)
         {
             if (DownloadListBox.Items.Count > 0)
-            { 
-                await DownloadVideos(); 
+            {
+                try
+                {
+                    await DownloadVideos();
+                }
+                catch (Exception ex)
+                {
+                    MaterialMessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                
+
                 MaterialMessageBox.Show(this, "Please add links first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            cts.Cancel();
+            if (!isNotDownloading)
+            {
+                cts.Cancel();
+                
+            }
         }
 
         private void RemoveItemButton_Click(object sender, EventArgs e)
@@ -160,7 +189,7 @@ namespace form_summon
             {
                 if (DownloadListBox.SelectedIndex == -1)
                 {
-                    
+
                     MaterialMessageBox.Show(this, "Please select the link to delete first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
@@ -188,5 +217,9 @@ namespace form_summon
             }
         }
 
+        private void parrotGauge1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

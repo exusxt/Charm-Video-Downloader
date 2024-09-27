@@ -11,6 +11,10 @@
       "RelativeMoniker": "D:0:0:{39ED380B-6538-4F34-8ADC-38A74952F77B}|Charm-Video-Downloader.csproj|solutionrelative:material.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{39ED380B-6538-4F34-8ADC-38A74952F77B}|Charm-Video-Downloader.csproj|c:\\users\\exus\\documents\\github\\charm-video-downloader\\charm-video-downloader\\charm-video-downloader.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{39ED380B-6538-4F34-8ADC-38A74952F77B}|Charm-Video-Downloader.csproj|solutionrelative:charm-video-downloader.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{39ED380B-6538-4F34-8ADC-38A74952F77B}|Charm-Video-Downloader.csproj|c:\\users\\exus\\documents\\github\\charm-video-downloader\\charm-video-downloader\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{39ED380B-6538-4F34-8ADC-38A74952F77B}|Charm-Video-Downloader.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -22,8 +26,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Charm-Video-Downloader",
+              "DocumentMoniker": "C:\\Users\\exus\\Documents\\GitHub\\Charm-Video-Downloader\\Charm-Video-Downloader\\Charm-Video-Downloader.csproj",
+              "RelativeDocumentMoniker": "Charm-Video-Downloader.csproj",
+              "ToolTip": "C:\\Users\\exus\\Documents\\GitHub\\Charm-Video-Downloader\\Charm-Video-Downloader\\Charm-Video-Downloader.csproj",
+              "RelativeToolTip": "Charm-Video-Downloader.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-27T23:13:20.722Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -32,7 +48,7 @@
               "RelativeDocumentMoniker": "Material.cs",
               "ToolTip": "C:\\Users\\exus\\Documents\\GitHub\\Charm-Video-Downloader\\Charm-Video-Downloader\\Material.cs",
               "RelativeToolTip": "Material.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAAAJkAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHgAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-23T20:21:26.885Z",
               "EditorCaption": ""
@@ -51,7 +67,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\exus\\Documents\\GitHub\\Charm-Video-Downloader\\Charm-Video-Downloader\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
